@@ -97,7 +97,7 @@ function Library:MakeDraggable(Instance, Cutoff)
     Instance.Active = true;
 
     Instance.InputBegan:Connect(function(Input)
-        if Input.UserInputType == Enum.UserInputType.MouseButton1 then
+        if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch then
             local ObjPos = Vector2.new(
                 Mouse.X - Instance.AbsolutePosition.X,
                 Mouse.Y - Instance.AbsolutePosition.Y
@@ -2006,7 +2006,7 @@ function Library:CreateWindow(WindowTitle)
         BackgroundColor3 = Color3.new(0, 0, 0);
         BorderSizePixel = 0;
         Position = UDim2.new(0, 175, 0, 50);
-        Size = UDim2.new(0, 550, 0, 600);
+        Size = UDim2.new(0, 400, 0, 300);
         Visible = false;
         ZIndex = 1;
         Parent = ScreenGui;
